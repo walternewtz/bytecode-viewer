@@ -339,7 +339,7 @@ public class MainViewerGUI extends JFrame
         buildObfuscateMenu();
         defaultSettings();
         
-        setTitle("Bytecode Viewer " + VERSION + " - https://bytecodeviewer.com | https://the.bytecode.club - @Konloch");
+        setTitle("Bytecode Viewer " + VERSION + " - ReVanced Edition");
 
         getContentPane().setLayout(new BoxLayout(getContentPane(), BoxLayout.X_AXIS));
 
