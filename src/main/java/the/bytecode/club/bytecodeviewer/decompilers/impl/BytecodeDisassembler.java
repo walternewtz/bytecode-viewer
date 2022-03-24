@@ -1,10 +1,12 @@
 package the.bytecode.club.bytecodeviewer.decompilers.impl;
 
-import java.util.ArrayList;
 import org.objectweb.asm.tree.ClassNode;
 import the.bytecode.club.bytecodeviewer.decompilers.InternalDecompiler;
 import the.bytecode.club.bytecodeviewer.decompilers.bytecode.ClassNodeDecompiler;
 import the.bytecode.club.bytecodeviewer.decompilers.bytecode.PrefixedStringBuilder;
+import the.bytecode.club.bytecodeviewer.gui.resourceviewer.BytecodeViewPanel;
+
+import java.util.ArrayList;
 
 /***************************************************************************
  * Bytecode Viewer (BCV) - Java & Android Reverse Engineering Suite        *
@@ -32,10 +34,15 @@ public class BytecodeDisassembler extends InternalDecompiler
 {
 	@Override
 	public String decompileClassNode(ClassNode cn, byte[] b) {
-		return ClassNodeDecompiler.decompile(new PrefixedStringBuilder(),
-				new ArrayList<>(), cn).toString();
+		return "do not use decompileClassNode for BytecodeDisassembler";
 	}
-	
+
+	@Override
+	public String decompileClassNodeEx(ClassNode cn, byte[] b, BytecodeViewPanel panel) {
+		return ClassNodeDecompiler.decompile(new PrefixedStringBuilder(),
+				new ArrayList<>(), cn, panel).toString();
+	}
+
 	@Override
 	public void decompileToZip(String sourceJar, String zipName) {
 	}

@@ -1,12 +1,5 @@
 package the.bytecode.club.bytecodeviewer.gui.resourceviewer.viewer;
 
-import java.awt.BorderLayout;
-import java.awt.Font;
-import java.awt.image.BufferedImage;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
 import org.apache.commons.io.FilenameUtils;
 import org.imgscalr.Scalr;
 import the.bytecode.club.bytecodeviewer.BytecodeViewer;
@@ -20,6 +13,10 @@ import the.bytecode.club.bytecodeviewer.resources.ResourceContainer;
 import the.bytecode.club.bytecodeviewer.resources.ResourceType;
 import the.bytecode.club.bytecodeviewer.util.MiscUtils;
 import the.bytecode.club.bytecodeviewer.util.SyntaxLanguage;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.image.BufferedImage;
 
 /***************************************************************************
  * Bytecode Viewer (BCV) - Java & Android Reverse Engineering Suite        *

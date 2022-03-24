@@ -1,5 +1,14 @@
 package the.bytecode.club.bytecodeviewer.gui.hexviewer;
 
+import org.exbin.auxiliary.paged_data.BinaryData;
+import org.exbin.bined.CaretMovedListener;
+import org.exbin.bined.CodeAreaCaretPosition;
+import org.exbin.bined.DataChangedListener;
+import org.exbin.bined.capability.EditModeCapable;
+import org.exbin.bined.swing.basic.CodeArea;
+
+import javax.annotation.ParametersAreNonnullByDefault;
+import javax.swing.*;
 import java.awt.event.KeyEvent;
 import java.math.BigInteger;
 import java.nio.ByteBuffer;
@@ -7,15 +16,6 @@ import java.nio.ByteOrder;
 import java.util.Arrays;
 import java.util.InputMismatchException;
 import java.util.Objects;
-import javax.annotation.ParametersAreNonnullByDefault;
-import javax.swing.JOptionPane;
-import javax.swing.SwingUtilities;
-import org.exbin.bined.CaretMovedListener;
-import org.exbin.bined.CodeAreaCaretPosition;
-import org.exbin.bined.DataChangedListener;
-import org.exbin.bined.swing.basic.CodeArea;
-import org.exbin.auxiliary.paged_data.BinaryData;
-import org.exbin.bined.capability.EditModeCapable;
 
 /**
  * Values side panel.

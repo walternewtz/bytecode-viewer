@@ -1,5 +1,14 @@
 package the.bytecode.club.bytecodeviewer.resources.importing.impl;
 
+import me.konloch.kontainer.io.DiskWriter;
+import org.apache.commons.io.IOUtils;
+import the.bytecode.club.bytecodeviewer.BytecodeViewer;
+import the.bytecode.club.bytecodeviewer.Configuration;
+import the.bytecode.club.bytecodeviewer.resources.ResourceContainer;
+import the.bytecode.club.bytecodeviewer.resources.importing.Import;
+import the.bytecode.club.bytecodeviewer.resources.importing.Importer;
+import the.bytecode.club.bytecodeviewer.util.MiscUtils;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
@@ -9,14 +18,6 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
-import me.konloch.kontainer.io.DiskWriter;
-import org.apache.commons.io.IOUtils;
-import the.bytecode.club.bytecodeviewer.BytecodeViewer;
-import the.bytecode.club.bytecodeviewer.Configuration;
-import the.bytecode.club.bytecodeviewer.resources.ResourceContainer;
-import the.bytecode.club.bytecodeviewer.resources.importing.Import;
-import the.bytecode.club.bytecodeviewer.resources.importing.Importer;
-import the.bytecode.club.bytecodeviewer.util.MiscUtils;
 
 import static the.bytecode.club.bytecodeviewer.Constants.fs;
 import static the.bytecode.club.bytecodeviewer.Constants.tempDirectory;

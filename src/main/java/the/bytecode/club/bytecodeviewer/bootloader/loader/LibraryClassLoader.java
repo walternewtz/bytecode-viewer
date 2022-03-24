@@ -1,17 +1,18 @@
 package the.bytecode.club.bytecodeviewer.bootloader.loader;
 
-import java.io.IOException;
-import java.lang.reflect.Modifier;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
 import org.objectweb.asm.ClassReader;
 import org.objectweb.asm.ClassWriter;
 import org.objectweb.asm.tree.ClassNode;
 import the.bytecode.club.bytecodeviewer.bootloader.classtree.ClassTree;
 import the.bytecode.club.bytecodeviewer.bootloader.resource.external.ExternalResource;
 import the.bytecode.club.bytecodeviewer.bootloader.resource.jar.contents.JarContents;
+
+import java.io.IOException;
+import java.lang.reflect.Modifier;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 
 /***************************************************************************
  * Bytecode Viewer (BCV) - Java & Android Reverse Engineering Suite        *

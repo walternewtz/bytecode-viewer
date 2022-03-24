@@ -1,9 +1,10 @@
 package the.bytecode.club.bytecodeviewer.translation.components;
 
-import javax.swing.tree.DefaultMutableTreeNode;
-import javax.swing.tree.DefaultTreeModel;
 import the.bytecode.club.bytecodeviewer.translation.TranslatedComponentReference;
 import the.bytecode.club.bytecodeviewer.translation.TranslatedComponents;
+
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeModel;
 
 /***************************************************************************
  * Bytecode Viewer (BCV) - Java & Android Reverse Engineering Suite        *

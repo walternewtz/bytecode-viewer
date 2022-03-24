@@ -30,12 +30,7 @@
 
 package the.bytecode.club.bytecodeviewer.obfuscators.mapping;
 
-import org.objectweb.asm.AnnotationVisitor;
-import org.objectweb.asm.Handle;
-import org.objectweb.asm.Label;
-import org.objectweb.asm.MethodVisitor;
-import org.objectweb.asm.Opcodes;
-import org.objectweb.asm.TypePath;
+import org.objectweb.asm.*;
 import org.objectweb.asm.commons.LocalVariablesSorter;
 import org.objectweb.asm.commons.Remapper;
 import the.bytecode.club.bytecodeviewer.Constants;

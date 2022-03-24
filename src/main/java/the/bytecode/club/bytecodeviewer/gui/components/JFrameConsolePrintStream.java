@@ -1,8 +1,9 @@
 package the.bytecode.club.bytecodeviewer.gui.components;
 
-import java.io.PrintStream;
-import javax.swing.SwingUtilities;
 import the.bytecode.club.bytecodeviewer.Constants;
+
+import javax.swing.*;
+import java.io.PrintStream;
 
 import static the.bytecode.club.bytecodeviewer.Constants.nl;
 

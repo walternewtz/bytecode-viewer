@@ -1,14 +1,5 @@
 package the.bytecode.club.bytecodeviewer.bootloader;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.InputStream;
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-import javax.swing.JOptionPane;
-import javax.swing.SwingUtilities;
 import me.konloch.kontainer.io.HTTPRequest;
 import org.apache.commons.io.FileUtils;
 import the.bytecode.club.bytecodeviewer.BytecodeViewer;
@@ -22,11 +13,16 @@ import the.bytecode.club.bytecodeviewer.bootloader.resource.external.ExternalRes
 import the.bytecode.club.bytecodeviewer.util.MiscUtils;
 import the.bytecode.club.bytecodeviewer.util.ZipUtils;
 
-import static the.bytecode.club.bytecodeviewer.Constants.fs;
-import static the.bytecode.club.bytecodeviewer.Constants.getBCVDirectory;
-import static the.bytecode.club.bytecodeviewer.Constants.krakatauVersion;
-import static the.bytecode.club.bytecodeviewer.Constants.krakatauWorkingDirectory;
-import static the.bytecode.club.bytecodeviewer.Constants.nl;
+import javax.swing.*;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+
+import static the.bytecode.club.bytecodeviewer.Constants.*;
 
 /***************************************************************************
  * Bytecode Viewer (BCV) - Java & Android Reverse Engineering Suite        *

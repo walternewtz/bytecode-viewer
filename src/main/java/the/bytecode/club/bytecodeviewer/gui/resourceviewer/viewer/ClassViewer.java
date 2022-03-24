@@ -1,19 +1,5 @@
 package the.bytecode.club.bytecodeviewer.gui.resourceviewer.viewer;
 
-import java.awt.BorderLayout;
-import java.awt.Container;
-import java.awt.Point;
-import java.awt.event.ComponentAdapter;
-import java.awt.event.ComponentEvent;
-import java.awt.event.HierarchyEvent;
-import java.awt.event.HierarchyListener;
-import java.util.Arrays;
-import java.util.List;
-import javax.swing.JButton;
-import javax.swing.JSplitPane;
-import javax.swing.JViewport;
-import javax.swing.SwingUtilities;
-import javax.swing.text.BadLocationException;
 import org.fife.ui.rsyntaxtextarea.RSyntaxTextArea;
 import the.bytecode.club.bytecodeviewer.BytecodeViewer;
 import the.bytecode.club.bytecodeviewer.Configuration;
@@ -24,6 +10,16 @@ import the.bytecode.club.bytecodeviewer.gui.resourceviewer.BytecodeViewPanel;
 import the.bytecode.club.bytecodeviewer.resources.Resource;
 import the.bytecode.club.bytecodeviewer.resources.ResourceContainer;
 import the.bytecode.club.bytecodeviewer.util.MethodParser;
+
+import javax.swing.*;
+import javax.swing.text.BadLocationException;
+import java.awt.*;
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
+import java.awt.event.HierarchyEvent;
+import java.awt.event.HierarchyListener;
+import java.util.Arrays;
+import java.util.List;
 
 import static the.bytecode.club.bytecodeviewer.util.MethodParser.Method;
 

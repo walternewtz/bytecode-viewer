@@ -1,6 +1,5 @@
 package the.bytecode.club.bytecodeviewer;
 
-import java.io.File;
 import me.konloch.kontainer.io.DiskWriter;
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
@@ -13,9 +12,9 @@ import the.bytecode.club.bytecodeviewer.translation.Language;
 import the.bytecode.club.bytecodeviewer.util.JarUtils;
 import the.bytecode.club.bytecodeviewer.util.MiscUtils;
 
-import static the.bytecode.club.bytecodeviewer.Constants.VERSION;
-import static the.bytecode.club.bytecodeviewer.Constants.fs;
-import static the.bytecode.club.bytecodeviewer.Constants.tempDirectory;
+import java.io.File;
+
+import static the.bytecode.club.bytecodeviewer.Constants.*;
 
 /***************************************************************************
  * Bytecode Viewer (BCV) - Java & Android Reverse Engineering Suite        *

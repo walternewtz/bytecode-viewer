@@ -1,6 +1,7 @@
 package the.bytecode.club.bytecodeviewer.decompilers;
 
 import org.objectweb.asm.tree.ClassNode;
+import the.bytecode.club.bytecodeviewer.gui.resourceviewer.BytecodeViewPanel;
 
 /***************************************************************************
  * Bytecode Viewer (BCV) - Java & Android Reverse Engineering Suite        *
@@ -28,6 +29,9 @@ import org.objectweb.asm.tree.ClassNode;
 public abstract class InternalDecompiler
 {
     public abstract String decompileClassNode(ClassNode cn, byte[] b);
+    public String decompileClassNodeEx(ClassNode cn, byte[] b, BytecodeViewPanel panel) {
+        return null;
+    }
 
     public abstract void decompileToZip(String sourceJar, String zipName);
 }

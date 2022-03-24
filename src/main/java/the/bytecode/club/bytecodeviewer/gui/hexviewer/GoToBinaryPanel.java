@@ -1,7 +1,8 @@
 package the.bytecode.club.bytecodeviewer.gui.hexviewer;
 
-import javax.annotation.ParametersAreNonnullByDefault;
 import org.exbin.bined.CodeAreaUtils;
+
+import javax.annotation.ParametersAreNonnullByDefault;
 
 /**
  * Go-to position panel for binary editor.

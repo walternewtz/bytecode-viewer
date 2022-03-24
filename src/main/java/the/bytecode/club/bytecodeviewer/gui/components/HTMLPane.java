@@ -1,19 +1,15 @@
 package the.bytecode.club.bytecodeviewer.gui.components;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.Scanner;
-import javax.swing.JEditorPane;
-import javax.swing.text.html.HTMLEditorKit;
 import the.bytecode.club.bytecodeviewer.Configuration;
 import the.bytecode.club.bytecodeviewer.bootloader.InitialBootScreen;
 
-import static the.bytecode.club.bytecodeviewer.Constants.BCVDir;
-import static the.bytecode.club.bytecodeviewer.Constants.FAT_JAR;
-import static the.bytecode.club.bytecodeviewer.Constants.enjarifyVersion;
-import static the.bytecode.club.bytecodeviewer.Constants.enjarifyWorkingDirectory;
-import static the.bytecode.club.bytecodeviewer.Constants.krakatauVersion;
-import static the.bytecode.club.bytecodeviewer.Constants.krakatauWorkingDirectory;
+import javax.swing.*;
+import javax.swing.text.html.HTMLEditorKit;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Scanner;
+
+import static the.bytecode.club.bytecodeviewer.Constants.*;
 
 /***************************************************************************
  * Bytecode Viewer (BCV) - Java & Android Reverse Engineering Suite        *

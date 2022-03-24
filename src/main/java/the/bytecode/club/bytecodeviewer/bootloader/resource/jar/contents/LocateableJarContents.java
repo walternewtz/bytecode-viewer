@@ -1,9 +1,10 @@
 package the.bytecode.club.bytecodeviewer.bootloader.resource.jar.contents;
 
-import java.net.URL;
 import org.objectweb.asm.tree.ClassNode;
 import the.bytecode.club.bytecodeviewer.bootloader.resource.DataContainer;
 import the.bytecode.club.bytecodeviewer.bootloader.resource.jar.JarResource;
+
+import java.net.URL;
 
 /***************************************************************************
  * Bytecode Viewer (BCV) - Java & Android Reverse Engineering Suite        *

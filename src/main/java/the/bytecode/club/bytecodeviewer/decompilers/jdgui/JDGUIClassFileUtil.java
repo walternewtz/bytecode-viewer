@@ -1,15 +1,12 @@
 package the.bytecode.club.bytecodeviewer.decompilers.jdgui;
 
-import java.io.BufferedInputStream;
-import java.io.DataInputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
 import org.jd.core.v1.model.classfile.constant.Constant;
 import org.jd.core.v1.model.classfile.constant.ConstantClass;
 import org.jd.core.v1.model.classfile.constant.ConstantUtf8;
 import org.jd.core.v1.service.deserializer.classfile.ClassFileFormatException;
 import org.jd.core.v1.service.deserializer.classfile.ClassFileReader;
+
+import java.io.*;
 
 
 public class JDGUIClassFileUtil

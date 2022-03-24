@@ -1,12 +1,12 @@
 package the.bytecode.club.bytecodeviewer.gui.components;
 
-import java.awt.CardLayout;
-import java.io.IOException;
-import javax.swing.JFrame;
-import javax.swing.JScrollPane;
 import the.bytecode.club.bytecodeviewer.bootloader.InitialBootScreen;
 import the.bytecode.club.bytecodeviewer.resources.IconResources;
 import the.bytecode.club.bytecodeviewer.translation.TranslatedStrings;
+
+import javax.swing.*;
+import java.awt.*;
+import java.io.IOException;
 
 import static the.bytecode.club.bytecodeviewer.Configuration.language;
 

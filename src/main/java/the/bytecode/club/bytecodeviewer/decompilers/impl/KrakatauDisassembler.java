@@ -1,11 +1,5 @@
 package the.bytecode.club.bytecodeviewer.decompilers.impl;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
-import java.io.StringWriter;
 import me.konloch.kontainer.io.DiskReader;
 import org.apache.commons.lang3.ArrayUtils;
 import org.objectweb.asm.tree.ClassNode;
@@ -20,9 +14,9 @@ import the.bytecode.club.bytecodeviewer.util.JarUtils;
 import the.bytecode.club.bytecodeviewer.util.MiscUtils;
 import the.bytecode.club.bytecodeviewer.util.ZipUtils;
 
-import static the.bytecode.club.bytecodeviewer.Constants.fs;
-import static the.bytecode.club.bytecodeviewer.Constants.krakatauWorkingDirectory;
-import static the.bytecode.club.bytecodeviewer.Constants.nl;
+import java.io.*;
+
+import static the.bytecode.club.bytecodeviewer.Constants.*;
 
 /***************************************************************************
  * Bytecode Viewer (BCV) - Java & Android Reverse Engineering Suite        *

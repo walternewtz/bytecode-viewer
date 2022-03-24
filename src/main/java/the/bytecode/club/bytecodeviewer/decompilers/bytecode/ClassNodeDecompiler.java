@@ -1,7 +1,6 @@
 package the.bytecode.club.bytecodeviewer.decompilers.bytecode;
 
-import java.util.ArrayList;
-import java.util.List;
+import kotlin.ranges.IntRange;
 import org.objectweb.asm.Attribute;
 import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.tree.ClassNode;
@@ -9,6 +8,11 @@ import org.objectweb.asm.tree.FieldNode;
 import org.objectweb.asm.tree.InnerClassNode;
 import org.objectweb.asm.tree.MethodNode;
 import the.bytecode.club.bytecodeviewer.BytecodeViewer;
+import the.bytecode.club.bytecodeviewer.gui.resourceviewer.BytecodeViewPanel;
+import the.bytecode.club.bytecodeviewer.util.LineNumberUtil;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static the.bytecode.club.bytecodeviewer.Constants.nl;
 
@@ -38,8 +42,11 @@ import static the.bytecode.club.bytecodeviewer.Constants.nl;
 public class ClassNodeDecompiler
 {
     public static PrefixedStringBuilder decompile(
-            PrefixedStringBuilder sb, List<String> decompiledClasses,
-            ClassNode cn) {
+            PrefixedStringBuilder sb,
+            List<String> decompiledClasses,
+            ClassNode cn,
+            BytecodeViewPanel panel
+    ) {
         List<String> unableToDecompile = new ArrayList<>();
         decompiledClasses.add(cn.name);
         sb.append(getAccessString(cn.access));
@@ -92,7 +99,11 @@ public class ClassNodeDecompiler
         }
         for (MethodNode mn : cn.methods) {
             sb.append(nl);
+            int mlnStart = LineNumberUtil.INSTANCE.getLineNumber(sb);
             MethodNodeDecompiler.decompile(sb, mn, cn);
+            int mlnEnd = LineNumberUtil.INSTANCE.getLineNumber(sb);
+            // I'm doing -1 here because it needs to be end-exclusive.
+            panel.methods.put(new IntRange(mlnStart, mlnEnd - 1), mn);
         }
 
         for (InnerClassNode o : cn.innerClasses) {
@@ -104,7 +115,7 @@ public class ClassNodeDecompiler
                 if (cn1 != null) {
                     sb.appendPrefix("     ");
                     sb.append(nl + nl);
-                    sb = decompile(sb, decompiledClasses, cn1);
+                    sb = decompile(sb, decompiledClasses, cn1, panel);
                     sb.trimPrefix(5);
                     sb.append(nl);
                 } else {

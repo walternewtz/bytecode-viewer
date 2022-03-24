@@ -1,5 +1,11 @@
 package the.bytecode.club.bytecodeviewer.bootloader.resource.external;
 
+import org.objectweb.asm.ClassReader;
+import org.objectweb.asm.tree.ClassNode;
+import the.bytecode.club.bytecodeviewer.bootloader.resource.jar.JarInfo;
+import the.bytecode.club.bytecodeviewer.bootloader.resource.jar.JarResource;
+import the.bytecode.club.bytecodeviewer.bootloader.resource.jar.contents.JarContents;
+
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -9,11 +15,6 @@ import java.net.URL;
 import java.util.Enumeration;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
-import org.objectweb.asm.ClassReader;
-import org.objectweb.asm.tree.ClassNode;
-import the.bytecode.club.bytecodeviewer.bootloader.resource.jar.JarInfo;
-import the.bytecode.club.bytecodeviewer.bootloader.resource.jar.JarResource;
-import the.bytecode.club.bytecodeviewer.bootloader.resource.jar.contents.JarContents;
 
 /***************************************************************************
  * Bytecode Viewer (BCV) - Java & Android Reverse Engineering Suite        *

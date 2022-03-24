@@ -1,18 +1,14 @@
 package the.bytecode.club.bytecodeviewer.gui.hexviewer;
 
-import java.awt.Toolkit;
+import org.exbin.bined.*;
+
+import javax.annotation.Nonnull;
+import javax.annotation.ParametersAreNonnullByDefault;
+import javax.swing.*;
+import java.awt.*;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.MouseEvent;
-import javax.annotation.Nonnull;
-import javax.annotation.ParametersAreNonnullByDefault;
-import javax.swing.JToolTip;
-import org.exbin.bined.CodeAreaCaretPosition;
-import org.exbin.bined.CodeAreaUtils;
-import org.exbin.bined.EditMode;
-import org.exbin.bined.EditOperation;
-import org.exbin.bined.PositionCodeType;
-import org.exbin.bined.SelectionRange;
 
 /**
  * Binary editor status panel.

@@ -1,8 +1,9 @@
 package the.bytecode.club.bytecodeviewer.util;
 
 import com.googlecode.d2j.dex.Dex2jar;
-import java.io.File;
 import the.bytecode.club.bytecodeviewer.BytecodeViewer;
+
+import java.io.File;
 
 /***************************************************************************
  * Bytecode Viewer (BCV) - Java & Android Reverse Engineering Suite        *

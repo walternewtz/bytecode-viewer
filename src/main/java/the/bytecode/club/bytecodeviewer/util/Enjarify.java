@@ -1,10 +1,11 @@
 package the.bytecode.club.bytecodeviewer.util;
 
-import java.io.File;
-import java.util.concurrent.atomic.AtomicBoolean;
 import the.bytecode.club.bytecodeviewer.BytecodeViewer;
 import the.bytecode.club.bytecodeviewer.Configuration;
 import the.bytecode.club.bytecodeviewer.resources.ExternalResources;
+
+import java.io.File;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 import static the.bytecode.club.bytecodeviewer.Constants.enjarifyWorkingDirectory;
 

@@ -1,8 +1,8 @@
 package the.bytecode.club.bytecodeviewer.resources;
 
+import javax.swing.*;
 import java.util.HashMap;
 import java.util.Map;
-import javax.swing.ImageIcon;
 
 /***************************************************************************
  * Bytecode Viewer (BCV) - Java & Android Reverse Engineering Suite        *

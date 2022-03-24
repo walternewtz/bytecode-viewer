@@ -1,26 +1,15 @@
 package the.bytecode.club.bytecodeviewer.util;
 
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.Container;
+import the.bytecode.club.bytecodeviewer.BytecodeViewer;
+
+import javax.swing.*;
+import javax.swing.border.Border;
+import java.awt.*;
 import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.Transferable;
 import java.awt.datatransfer.UnsupportedFlavorException;
-import java.awt.dnd.DnDConstants;
-import java.awt.dnd.DropTarget;
-import java.awt.dnd.DropTargetDragEvent;
-import java.awt.dnd.DropTargetDropEvent;
-import java.awt.dnd.DropTargetEvent;
-import java.awt.dnd.DropTargetListener;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.IOException;
-import java.io.PrintStream;
-import java.io.Reader;
-import javax.swing.BorderFactory;
-import javax.swing.JComponent;
-import javax.swing.border.Border;
-import the.bytecode.club.bytecodeviewer.BytecodeViewer;
+import java.awt.dnd.*;
+import java.io.*;
 
 /***************************************************************************
  * Bytecode Viewer (BCV) - Java & Android Reverse Engineering Suite        *

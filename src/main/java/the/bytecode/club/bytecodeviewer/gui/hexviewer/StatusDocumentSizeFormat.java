@@ -1,9 +1,10 @@
 package the.bytecode.club.bytecodeviewer.gui.hexviewer;
 
-import java.util.Objects;
+import org.exbin.bined.PositionCodeType;
+
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
-import org.exbin.bined.PositionCodeType;
+import java.util.Objects;
 
 /**
  * Document size format for status.

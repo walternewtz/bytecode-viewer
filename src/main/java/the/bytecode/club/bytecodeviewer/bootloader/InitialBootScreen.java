@@ -1,19 +1,14 @@
 package the.bytecode.club.bytecodeviewer.bootloader;
 
-import java.awt.Dimension;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.Insets;
-import java.awt.Toolkit;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
-import java.io.IOException;
-import javax.swing.JFrame;
-import javax.swing.JProgressBar;
-import javax.swing.JScrollPane;
 import the.bytecode.club.bytecodeviewer.Configuration;
 import the.bytecode.club.bytecodeviewer.gui.components.HTMLPane;
 import the.bytecode.club.bytecodeviewer.resources.IconResources;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.io.IOException;
 
 import static the.bytecode.club.bytecodeviewer.Configuration.language;
 

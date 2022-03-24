@@ -1,10 +1,11 @@
 package the.bytecode.club.bytecodeviewer.gui.hexviewer;
 
-import javax.annotation.ParametersAreNonnullByDefault;
 import org.exbin.bined.CodeAreaCaretPosition;
 import org.exbin.bined.EditMode;
 import org.exbin.bined.EditOperation;
 import org.exbin.bined.SelectionRange;
+
+import javax.annotation.ParametersAreNonnullByDefault;
 
 /**
  * Binary editor status interface.

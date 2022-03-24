@@ -1,8 +1,9 @@
 package the.bytecode.club.bytecodeviewer.gui.util;
 
-import java.awt.Color;
-import javax.swing.SwingUtilities;
 import the.bytecode.club.bytecodeviewer.gui.resourceviewer.TabbedPane;
+
+import javax.swing.*;
+import java.awt.*;
 
 /**
  * @author Konloch

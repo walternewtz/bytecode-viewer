@@ -1,14 +1,10 @@
 package the.bytecode.club.bytecodeviewer.bootloader.resource.jar.contents;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
 import org.objectweb.asm.tree.ClassNode;
 import the.bytecode.club.bytecodeviewer.bootloader.resource.DataContainer;
 import the.bytecode.club.bytecodeviewer.bootloader.resource.jar.JarResource;
+
+import java.util.*;
 
 /***************************************************************************
  * Bytecode Viewer (BCV) - Java & Android Reverse Engineering Suite        *

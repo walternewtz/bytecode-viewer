@@ -1,6 +1,5 @@
 package the.bytecode.club.bytecodeviewer.resources.importing.impl;
 
-import java.io.File;
 import org.apache.commons.io.FileUtils;
 import the.bytecode.club.bytecodeviewer.BytecodeViewer;
 import the.bytecode.club.bytecodeviewer.resources.ResourceContainer;
@@ -9,6 +8,8 @@ import the.bytecode.club.bytecodeviewer.resources.importing.Importer;
 import the.bytecode.club.bytecodeviewer.util.Dex2Jar;
 import the.bytecode.club.bytecodeviewer.util.Enjarify;
 import the.bytecode.club.bytecodeviewer.util.MiscUtils;
+
+import java.io.File;
 
 import static the.bytecode.club.bytecodeviewer.Constants.fs;
 import static the.bytecode.club.bytecodeviewer.Constants.tempDirectory;

@@ -2,16 +2,10 @@ package the.bytecode.club.bytecodeviewer;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
-import javax.swing.SwingUtilities;
 import me.konloch.kontainer.io.DiskReader;
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.lang3.JavaVersion;
+import org.apache.commons.lang3.SystemUtils;
 import org.objectweb.asm.tree.ClassNode;
 import the.bytecode.club.bytecodeviewer.api.BCV;
 import the.bytecode.club.bytecodeviewer.api.ExceptionUI;
@@ -31,18 +25,15 @@ import the.bytecode.club.bytecodeviewer.plugin.PluginWriter;
 import the.bytecode.club.bytecodeviewer.resources.ResourceContainer;
 import the.bytecode.club.bytecodeviewer.resources.importing.ImportResource;
 import the.bytecode.club.bytecodeviewer.translation.TranslatedStrings;
-import the.bytecode.club.bytecodeviewer.util.BootCheck;
-import the.bytecode.club.bytecodeviewer.util.ClassFileUtils;
-import the.bytecode.club.bytecodeviewer.util.LazyNameUtil;
-import the.bytecode.club.bytecodeviewer.util.MiscUtils;
-import the.bytecode.club.bytecodeviewer.util.PingBack;
-import the.bytecode.club.bytecodeviewer.util.SecurityMan;
+import the.bytecode.club.bytecodeviewer.util.*;
+
+import javax.swing.*;
+import java.io.File;
+import java.io.IOException;
+import java.util.*;
 
 import static javax.swing.JOptionPane.QUESTION_MESSAGE;
-import static the.bytecode.club.bytecodeviewer.Constants.DEV_MODE;
-import static the.bytecode.club.bytecodeviewer.Constants.FAT_JAR;
-import static the.bytecode.club.bytecodeviewer.Constants.VERSION;
-import static the.bytecode.club.bytecodeviewer.Constants.tempDirectory;
+import static the.bytecode.club.bytecodeviewer.Constants.*;
 
 /***************************************************************************
  * Bytecode Viewer (BCV) - Java & Android Reverse Engineering Suite        *
@@ -179,8 +170,11 @@ public class BytecodeViewer
         System.out.println(" - Created by @Konloch");
         System.out.println("https://bytecodeviewer.com - https://the.bytecode.club");
         
-        //set the security manager
-        System.setSecurityManager(sm);
+        // Set the security manager
+        // Don't set it on Java 17 and higher, since it's deprecated
+        if (!SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_17)) {
+            System.setSecurityManager(sm);
+        }
         
         try
         {

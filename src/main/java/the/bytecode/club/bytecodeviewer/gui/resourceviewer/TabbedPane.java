@@ -1,21 +1,5 @@
 package the.bytecode.club.bytecodeviewer.gui.resourceviewer;
 
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.FlowLayout;
-import java.awt.Rectangle;
-import java.awt.event.InputEvent;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import javax.swing.BorderFactory;
-import javax.swing.JButton;
-import javax.swing.JLabel;
-import javax.swing.JMenuItem;
-import javax.swing.JPanel;
-import javax.swing.JPopupMenu;
-import javax.swing.JTabbedPane;
-import javax.swing.SwingUtilities;
 import the.bytecode.club.bytecodeviewer.BytecodeViewer;
 import the.bytecode.club.bytecodeviewer.gui.components.ButtonHoverAnimation;
 import the.bytecode.club.bytecodeviewer.gui.components.MaxWidthJLabel;
@@ -23,6 +7,13 @@ import the.bytecode.club.bytecodeviewer.gui.components.listeners.MouseClickedLis
 import the.bytecode.club.bytecodeviewer.gui.resourceviewer.viewer.ResourceViewer;
 import the.bytecode.club.bytecodeviewer.gui.util.DelayTabbedPaneThread;
 import the.bytecode.club.bytecodeviewer.translation.TranslatedStrings;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.InputEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 /***************************************************************************
  * Bytecode Viewer (BCV) - Java & Android Reverse Engineering Suite        *

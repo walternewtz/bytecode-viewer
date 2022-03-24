@@ -1,17 +1,17 @@
 package the.bytecode.club.bytecodeviewer.gui.resourcelist;
 
-import java.awt.Component;
+import org.apache.commons.io.FilenameUtils;
+import the.bytecode.club.bytecodeviewer.resources.IconResources;
+import the.bytecode.club.bytecodeviewer.resources.ResourceType;
+
+import javax.swing.*;
+import javax.swing.tree.DefaultTreeCellRenderer;
+import javax.swing.tree.TreeNode;
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import javax.swing.ImageIcon;
-import javax.swing.JTree;
-import javax.swing.tree.DefaultTreeCellRenderer;
-import javax.swing.tree.TreeNode;
-import org.apache.commons.io.FilenameUtils;
-import the.bytecode.club.bytecodeviewer.resources.IconResources;
-import the.bytecode.club.bytecodeviewer.resources.ResourceType;
 
 /**
  * @author http://stackoverflow.com/questions/14968005

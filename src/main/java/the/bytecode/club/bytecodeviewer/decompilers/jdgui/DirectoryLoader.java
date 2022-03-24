@@ -1,12 +1,13 @@
 package the.bytecode.club.bytecodeviewer.decompilers.jdgui;
 
+import org.apache.commons.io.IOUtils;
+import org.jd.core.v1.api.loader.Loader;
+import org.jd.core.v1.api.loader.LoaderException;
+
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import org.apache.commons.io.IOUtils;
-import org.jd.core.v1.api.loader.Loader;
-import org.jd.core.v1.api.loader.LoaderException;
 
 public class DirectoryLoader implements Loader
 {

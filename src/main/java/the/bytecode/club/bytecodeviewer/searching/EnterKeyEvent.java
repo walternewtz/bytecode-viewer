@@ -1,8 +1,9 @@
 package the.bytecode.club.bytecodeviewer.searching;
 
+import the.bytecode.club.bytecodeviewer.BytecodeViewer;
+
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import the.bytecode.club.bytecodeviewer.BytecodeViewer;
 
 /***************************************************************************
  * Bytecode Viewer (BCV) - Java & Android Reverse Engineering Suite        *

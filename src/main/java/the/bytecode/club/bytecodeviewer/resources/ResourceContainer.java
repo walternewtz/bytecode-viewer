@@ -1,13 +1,14 @@
 package the.bytecode.club.bytecodeviewer.resources;
 
-import java.io.File;
-import java.util.LinkedHashMap;
-import java.util.Map;
 import org.apache.commons.io.FilenameUtils;
 import org.objectweb.asm.tree.ClassNode;
 import the.bytecode.club.bytecodeviewer.api.ASMUtil;
 import the.bytecode.club.bytecodeviewer.gui.resourcelist.ResourceTreeNode;
 import the.bytecode.club.bytecodeviewer.util.LazyNameUtil;
+
+import java.io.File;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 /***************************************************************************
  * Bytecode Viewer (BCV) - Java & Android Reverse Engineering Suite        *

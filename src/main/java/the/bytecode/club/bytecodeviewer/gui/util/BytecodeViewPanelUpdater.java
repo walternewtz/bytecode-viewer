@@ -1,17 +1,6 @@
 package the.bytecode.club.bytecodeviewer.gui.util;
 
-import java.awt.BorderLayout;
-import java.util.Objects;
-import java.util.regex.Matcher;
-import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JPanel;
-import javax.swing.JViewport;
-import javax.swing.SwingUtilities;
-import javax.swing.event.CaretEvent;
-import javax.swing.event.CaretListener;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
+import app.revanced.bcv.ui.UIHandler;
 import org.fife.ui.rsyntaxtextarea.RSyntaxTextArea;
 import org.fife.ui.rsyntaxtextarea.SyntaxConstants;
 import org.objectweb.asm.ClassWriter;
@@ -25,6 +14,15 @@ import the.bytecode.club.bytecodeviewer.gui.hexviewer.HexViewer;
 import the.bytecode.club.bytecodeviewer.gui.resourceviewer.BytecodeViewPanel;
 import the.bytecode.club.bytecodeviewer.gui.resourceviewer.viewer.ClassViewer;
 import the.bytecode.club.bytecodeviewer.util.MethodParser;
+
+import javax.swing.*;
+import javax.swing.event.CaretEvent;
+import javax.swing.event.CaretListener;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
+import java.awt.*;
+import java.util.Objects;
+import java.util.regex.Matcher;
 
 import static the.bytecode.club.bytecodeviewer.gui.resourceviewer.TabbedPane.BLANK_COLOR;
 import static the.bytecode.club.bytecodeviewer.translation.TranslatedStrings.EDITABLE;
@@ -56,13 +54,11 @@ import static the.bytecode.club.bytecodeviewer.translation.TranslatedStrings.EDI
  * @since 09/26/2011
  */
 
-public class BytecodeViewPanelUpdater implements Runnable
-{
+public class BytecodeViewPanelUpdater implements Runnable {
     public final ClassViewer viewer;
     public final BytecodeViewPanel bytecodeViewPanel;
     private final JButton button;
     private final byte[] classBytes;
-    
     
     public SearchableRSyntaxTextArea updateUpdaterTextArea;
     public JComboBox<Integer> methodsList;
@@ -70,8 +66,7 @@ public class BytecodeViewPanelUpdater implements Runnable
     public boolean waitingFor;
     private Thread thread;
     
-    public BytecodeViewPanelUpdater(BytecodeViewPanel bytecodeViewPanel, ClassViewer cv, byte[] classBytes, boolean isPanelEditable, JButton button)
-    {
+    public BytecodeViewPanelUpdater(BytecodeViewPanel bytecodeViewPanel, ClassViewer cv, byte[] classBytes, boolean isPanelEditable, JButton button) {
         this.viewer = cv;
         this.bytecodeViewPanel = bytecodeViewPanel;
         this.classBytes = classBytes;
@@ -82,15 +77,11 @@ public class BytecodeViewPanelUpdater implements Runnable
     
     public void processDisplay()
     {
-        try
-        {
+        try {
             BytecodeViewer.updateBusyStatus(true);
-        
-            if (bytecodeViewPanel.decompiler != Decompiler.NONE)
-            {
-                //hex viewer
-                if (bytecodeViewPanel.decompiler == Decompiler.HEXCODE_VIEWER)
-                {
+            if (bytecodeViewPanel.decompiler != Decompiler.NONE) {
+                // hex viewer
+                if (bytecodeViewPanel.decompiler == Decompiler.HEXCODE_VIEWER) {
                     final ClassWriter cw = new ClassWriter(0);
                     viewer.resource.getResourceClassNode().accept(cw);
                 
@@ -99,24 +90,32 @@ public class BytecodeViewPanelUpdater implements Runnable
                         final HexViewer hex = new HexViewer(cw.toByteArray());
                         bytecodeViewPanel.add(hex);
                     });
-                }
-                else
-                {
+                } else {
                     final Decompiler decompiler = bytecodeViewPanel.decompiler;
                 
-                    //perform decompiling inside of this thread
-                    final String decompiledSource = decompiler.getDecompiler().decompileClassNode(viewer.resource.getResourceClassNode(), classBytes);
+                    // perform decompiling inside this thread
+                    String decompiledSource;
+                    if (decompiler == Decompiler.BYTECODE_DISASSEMBLER) {
+                        decompiledSource = decompiler.getDecompiler().decompileClassNodeEx(
+                                viewer.resource.getResourceClassNode(),
+                                classBytes,
+                                bytecodeViewPanel
+                        );
+                    } else {
+                        decompiledSource = decompiler.getDecompiler().decompileClassNode(
+                                viewer.resource.getResourceClassNode(),
+                                classBytes
+                        );
+                    }
                 
                     //set the swing components on the swing thread
-                    SwingUtilities.invokeLater(() ->
-                    {
+                    SwingUtilities.invokeLater(() -> {
                         buildTextArea(decompiler, decompiledSource);
                         waitingFor = false;
                     });
                 
                     //hold this thread until the swing thread has finished attaching the components
-                    while (waitingFor)
-                    {
+                    while (waitingFor) {
                         try {
                             Thread.sleep(1);
                         } catch (Exception ignored) {}
@@ -124,35 +123,25 @@ public class BytecodeViewPanelUpdater implements Runnable
                 }
             }
         }
-        catch (IndexOutOfBoundsException | NullPointerException e)
-        {
-            //ignore
-        }
-        catch (Exception e)
-        {
+        catch (IndexOutOfBoundsException | NullPointerException ignored) {}
+        catch (Exception e) {
             BytecodeViewer.handleException(e);
-        }
-        finally
-        {
+        } finally {
             viewer.resetDivider();
             BytecodeViewer.updateBusyStatus(false);
-            SwingUtilities.invokeLater(() ->
-            {
-                if (button != null)
-                    button.setEnabled(true);
+            SwingUtilities.invokeLater(() -> {
+                if (button != null) button.setEnabled(true);
             });
         }
     }
     
-    public void startNewThread()
-    {
+    public void startNewThread() {
         thread = new Thread(this, "Pane Update");
         thread.start();
     }
 
     @Override
-    public void run()
-    {
+    public void run() {
         if(bytecodeViewPanel.decompiler == Decompiler.NONE)
             return;
         
@@ -365,7 +354,11 @@ public class BytecodeViewPanelUpdater implements Runnable
         bytecodeViewPanel.textArea.setText(decompiledSource);
         bytecodeViewPanel.textArea.setCaretPosition(0);
         bytecodeViewPanel.textArea.setEditable(isPanelEditable);
-        
+
+        JPopupMenu menu = bytecodeViewPanel.textArea.getPopupMenu();
+        UIHandler.INSTANCE.addMenuButtons(bytecodeViewPanel, menu);
+        bytecodeViewPanel.textArea.setPopupMenu(menu);
+
         if(isPanelEditable && decompiler == Decompiler.SMALI_DISASSEMBLER)
             bytecodeViewPanel.compiler = Compiler.SMALI_ASSEMBLER;
         else if(isPanelEditable && decompiler == Decompiler.KRAKATAU_DISASSEMBLER)

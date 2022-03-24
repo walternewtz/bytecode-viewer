@@ -1,8 +1,9 @@
 package the.bytecode.club.bytecodeviewer.decompilers.jdgui;
 
+import org.jd.core.v1.api.printer.Printer;
+
 import java.io.Closeable;
 import java.io.PrintStream;
-import org.jd.core.v1.api.printer.Printer;
 
 public class PlainTextPrinter implements Printer, Closeable {
     protected static final String TAB = "  ";

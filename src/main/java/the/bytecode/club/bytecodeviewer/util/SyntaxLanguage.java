@@ -1,10 +1,11 @@
 package the.bytecode.club.bytecodeviewer.util;
 
-import java.io.File;
-import java.util.function.BiFunction;
 import org.fife.ui.rsyntaxtextarea.FileTypeUtil;
 import org.fife.ui.rsyntaxtextarea.RSyntaxTextArea;
 import org.fife.ui.rsyntaxtextarea.SyntaxConstants;
+
+import java.io.File;
+import java.util.function.BiFunction;
 
 /***************************************************************************
  * Bytecode Viewer (BCV) - Java & Android Reverse Engineering Suite        *

@@ -1,12 +1,13 @@
 package the.bytecode.club.bytecodeviewer.obfuscators.mapping;
 
+import the.bytecode.club.bytecodeviewer.obfuscators.mapping.data.FieldMappingData;
+import the.bytecode.club.bytecodeviewer.obfuscators.mapping.data.MappingData;
+import the.bytecode.club.bytecodeviewer.obfuscators.mapping.data.MethodMappingData;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import the.bytecode.club.bytecodeviewer.obfuscators.mapping.data.FieldMappingData;
-import the.bytecode.club.bytecodeviewer.obfuscators.mapping.data.MappingData;
-import the.bytecode.club.bytecodeviewer.obfuscators.mapping.data.MethodMappingData;
 
 /***************************************************************************
  * Bytecode Viewer (BCV) - Java & Android Reverse Engineering Suite        *

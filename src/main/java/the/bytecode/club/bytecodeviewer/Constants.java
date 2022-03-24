@@ -1,9 +1,10 @@
 package the.bytecode.club.bytecodeviewer;
 
-import java.io.File;
-import java.io.PrintStream;
 import org.objectweb.asm.Opcodes;
 import the.bytecode.club.bytecodeviewer.resources.ResourceType;
+
+import java.io.File;
+import java.io.PrintStream;
 
 /***************************************************************************
  * Bytecode Viewer (BCV) - Java & Android Reverse Engineering Suite        *

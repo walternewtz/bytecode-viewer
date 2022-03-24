@@ -1,11 +1,12 @@
 package the.bytecode.club.bytecodeviewer.decompilers.impl;
 
-import java.io.PrintWriter;
-import java.io.StringWriter;
 import org.objectweb.asm.tree.ClassNode;
 import org.objectweb.asm.util.Textifier;
 import org.objectweb.asm.util.TraceClassVisitor;
 import the.bytecode.club.bytecodeviewer.decompilers.InternalDecompiler;
+
+import java.io.PrintWriter;
+import java.io.StringWriter;
 
 /***************************************************************************
  * Bytecode Viewer (BCV) - Java & Android Reverse Engineering Suite        *

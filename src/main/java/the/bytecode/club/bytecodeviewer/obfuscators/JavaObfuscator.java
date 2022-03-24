@@ -1,10 +1,11 @@
 package the.bytecode.club.bytecodeviewer.obfuscators;
 
-import java.util.ArrayList;
-import java.util.List;
 import the.bytecode.club.bytecodeviewer.BytecodeViewer;
 import the.bytecode.club.bytecodeviewer.Configuration;
 import the.bytecode.club.bytecodeviewer.util.MiscUtils;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /***************************************************************************
  * Bytecode Viewer (BCV) - Java & Android Reverse Engineering Suite        *

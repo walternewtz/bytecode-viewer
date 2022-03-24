@@ -1,12 +1,9 @@
 package the.bytecode.club.bytecodeviewer.searching.impl;
 
-import java.util.Iterator;
-import org.objectweb.asm.tree.AbstractInsnNode;
-import org.objectweb.asm.tree.ClassNode;
-import org.objectweb.asm.tree.FieldInsnNode;
-import org.objectweb.asm.tree.InsnList;
-import org.objectweb.asm.tree.MethodNode;
+import org.objectweb.asm.tree.*;
 import the.bytecode.club.bytecodeviewer.resources.ResourceContainer;
+
+import java.util.Iterator;
 
 /***************************************************************************
  * Bytecode Viewer (BCV) - Java & Android Reverse Engineering Suite        *

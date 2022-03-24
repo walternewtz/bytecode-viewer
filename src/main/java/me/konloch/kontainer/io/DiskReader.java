@@ -1,14 +1,11 @@
 package me.konloch.kontainer.io;
 
+import the.bytecode.club.bytecodeviewer.util.EncodeUtils;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Random;
-import the.bytecode.club.bytecodeviewer.util.EncodeUtils;
+import java.util.*;
 
 /**
  * Used to load from the disk, optional caching

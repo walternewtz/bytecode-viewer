@@ -1,10 +1,8 @@
 package the.bytecode.club.bytecodeviewer.gui.resourceviewer;
 
-import java.awt.BorderLayout;
-import javax.swing.JButton;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
+import kotlin.ranges.IntRange;
 import org.objectweb.asm.tree.ClassNode;
+import org.objectweb.asm.tree.MethodNode;
 import the.bytecode.club.bytecodeviewer.compilers.Compiler;
 import the.bytecode.club.bytecodeviewer.decompilers.Decompiler;
 import the.bytecode.club.bytecodeviewer.gui.components.SearchableRSyntaxTextArea;
@@ -13,6 +11,10 @@ import the.bytecode.club.bytecodeviewer.gui.resourceviewer.viewer.ClassViewer;
 import the.bytecode.club.bytecodeviewer.gui.util.BytecodeViewPanelUpdater;
 import the.bytecode.club.bytecodeviewer.translation.TranslatedStrings;
 import the.bytecode.club.bytecodeviewer.util.JarUtils;
+
+import javax.swing.*;
+import java.awt.*;
+import java.util.HashMap;
 
 import static the.bytecode.club.bytecodeviewer.Constants.nl;
 
@@ -48,6 +50,7 @@ public class BytecodeViewPanel extends JPanel
 	public BytecodeViewPanelUpdater updateThread;
 	public Decompiler decompiler = Decompiler.NONE;
 	public Compiler compiler = Compiler.JAVA_COMPILER;
+	public HashMap<IntRange, MethodNode> methods = new HashMap<>();
 	
 	public BytecodeViewPanel(int panelIndex, ClassViewer viewer)
 	{

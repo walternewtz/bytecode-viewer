@@ -1,11 +1,12 @@
 package the.bytecode.club.bytecodeviewer.util;
 
-import java.awt.Color;
-import javax.swing.JTextArea;
+import the.bytecode.club.bytecodeviewer.BytecodeViewer;
+
+import javax.swing.*;
 import javax.swing.text.DefaultHighlighter;
 import javax.swing.text.Document;
 import javax.swing.text.Highlighter;
-import the.bytecode.club.bytecodeviewer.BytecodeViewer;
+import java.awt.*;
 
 /***************************************************************************
  * Bytecode Viewer (BCV) - Java & Android Reverse Engineering Suite        *
